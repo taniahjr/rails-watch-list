@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div class="banner">
+      <div class="title">
+      <h1>My watch list 🍿</h1>
+      </div>
+    </div>
+  <div class="cards-list-container">
+        <% @lists.each do |list| %>
+          <div class="card-list-container"> <%= link_to list.name, list_path(list.id)%> </div>
+        <% end %>
+  </div>
+
+  <div class="btn btn-danger justify-content-center">
+    <div>
+      <%= link_to "(+) Create a list", new_list_path, class: "create-a-list" %>
+    </div>
+  </div>
+
+</body>
+</html>
